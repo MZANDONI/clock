@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
+
+        body{
+            background-color: #000000;
+            
+        }
+
+       #container{
+            background-color: rgb(39, 39, 39);
+            color: rgb(255, 255, 255);
+            margin: auto;
+            max-width: 300px;
+            margin-top: 250px;
+            text-align: center;
+            font-size: 5em;
+            padding: 40px 0px;
+            font-family: 'Rajdhani', sans-serif;
+            text-shadow: 0 0 20px rgb(0, 247, 255),
+                0 0 10px rgb(0, 247, 255), 
+                0 0 40px rgb(0, 247, 255);
+            border-radius: 10px;
+            border-style: outset;
+            border-color: rgb(119, 119, 119);
+            border-width: 5px;
+
+            
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="clock"></div>
+    </div>
+    
+    <script>
+        function timer(){
+            const date = new Date()
+            let hours = date.getHours()
+            let minutes = date.getMinutes()
+            let seconds = date.getSeconds()
+
+            let hour = hours < 10 ? `0${hours}` : hours
+            let minute = minutes < 10 ? `0${minutes}` : minutes
+            let second = seconds < 10 ? `0${seconds}` : seconds
+
+            let clock = document.getElementById("clock")
+            clock.innerHTML = `${hour}:${minute}:${second}`
+        }
+        setInterval(timer, 1000)
+        
+    </script>
+</body>
+</html>
